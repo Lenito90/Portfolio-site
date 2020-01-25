@@ -1,4 +1,4 @@
-/* variables */
+/* colours */
 html{
     --grey-background: #F3F3F3;
     --grey-border: #E9E9E9;
@@ -7,6 +7,7 @@ html{
     --hover-color: #EBEBEB; 
     --footer-color: #2F2F2F; 
 
+    /* Fonts */
 
     --font-family: 'Poppins', sans-serif;
 
@@ -28,12 +29,14 @@ html{
     --body-text-strong-size: 16px;
     --body-text-strong-weight: 600;
 
+ /* Spacing */
+
     --spacing-ample: 64px;
     --spacing-regular: 32px;
     --spacing-small: 16px;
 
+ /* Other */
     --border-radius: 16px;
-
     --elevation: 0px 2px 20px rgba(0, 0, 0, 0.08);
 
 }
@@ -126,9 +129,90 @@ h1{
     right: var(--spacing-ample);
 }
 
-section{
+.mobile{
+    color: var(--blue-highlight);
+    font-weight: var(--body-text-strong-weight);
+}
+
+section.intro{
     font-size: var(--sub-heading-size);
 }
+
+section.about{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto 200px;
+    grid-template-areas: 
+    "title title title"
+    "personality tools education"
+}
+
+h2.subheading{
+    font-size: var(--sub-heading-size);
+    font-weight: var(--sub-heading-weight);
+    font-style: italic;
+    margin: 88px 0 32px;
+    grid-area: title;
+}
+
+.list-with-bullets li{
+    list-style-type: disc;
+}
+
+.list-with-bullets ul{
+    padding: 16px;
+}
+
+
+.education ul{
+    display: flex;
+    height: 100%;
+}
+
+.education li{
+    flex-grow: 1;
+   
+}
+
+.blue-subtitle{
+    font-weight: var(--body-text-strong-weight);
+    color: var(--blue-highlight);
+}
+
+.year{
+    font-weight: var(--body-text-strong-weight);
+    margin-left: 12px;
+}
+
+.education li p:not(:last-child){
+    margin-bottom: 1.525em;
+}
+
+.title{
+    font-weight: var(--body-subtitle-weight);
+}
+
+.elevated-button{
+    box-shadow: var(--elevation);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.panel-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-regular);
+}
+
+.panel{
+    border-bottom: 1px solid var(--grey-border);
+}
+
+.position-details, .position-info{
+    flex: 50% 1 1;
+}
+
 
 footer{
     background-color: var(--footer-color);
@@ -138,6 +222,16 @@ footer{
     padding: var(--spacing-small);
     align-items: center;
     flex-grow: 0;
+}
+
+
+.panel-content{
+    display: flex;
+    margin-bottom: var(--spacing-regular);
+}
+
+.panel.closed .panel-content{
+display: none;
 }
 
 footer li{
