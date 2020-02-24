@@ -1,43 +1,39 @@
 /* colours */
 html{
-    --grey-background: #F3F3F3;
-    --grey-border: #E9E9E9;
-    --blue-highlight: #2F59F5;
-    --text-color: rgba(0, 0, 0, 0.88);
+    --black-100: #F3F3F3;
+    --black-200: #E9E9E9;
+    --blue-500: #2F59F5;
+    --black-900: rgba(0, 0, 0, 0.88);
     --hover-color: #EBEBEB; 
     --footer-color: #2F2F2F; 
 
-    /* Fonts */
+/* Fonts */
 
     --font-family: 'Poppins', sans-serif;
 
-    --main-heading-size: 56px;
-    --main-heading-weight: 600;
+    --display1: 56px;
+    --display1-bold: 600;
 
-    --sub-heading-size: 28px;
-    --sub-heading-weight: 400;
+    --title1: 28px;
+    --title1-regular: 400;
 
-    --nav-text-size: 20px;
-    --nav-text-weight: 400;
+    --text1: 16px;
+    --text1-regular: 400;
+    --text1-bold: 600;
 
-    --body-subtitle-size: 20px;
-    --body-subtitle-weight: 600;
-
-    --body-text-size: 16px;
-    --body-text-weight: 400;
-
-    --body-text-strong-size: 16px;
-    --body-text-strong-weight: 600;
+    --text2: 20px;
+    --text2-bold: 600;
 
  /* Spacing */
 
-    --spacing-ample: 64px;
-    --spacing-regular: 32px;
-    --spacing-small: 16px;
+    --spacing-64: 64px;
+    --spacing-32: 32px;
+    --spacing-16: 16px;
+    --spacing-8: 8px;
 
  /* Other */
-    --border-radius: 16px;
-    --elevation: 0px 2px 20px rgba(0, 0, 0, 0.08);
+    --border-default: 16px;
+    --elevation-default: 0px 2px 20px rgba(0, 0, 0, 0.08);
 
 }
 
@@ -46,8 +42,8 @@ body {
     height: 100vh;
     margin: 0;
     font-family: var(--font-family);
-    font-size: var(--body-text-size);
-    font-weight: var(--body-text-weight);
+    font-size: var(--text1);
+    font-weight: var(--text1-regular);
 }
 
 /* resets */
@@ -67,21 +63,21 @@ p, ul,li{
 /* styles */
 
 nav{
-    background-color: var(--grey-background);
+    background-color: var(--black-100);
     flex: 220px 0 0;
     height: 100%;
     padding: 0;
 }
 
 .side-nav li{
-    padding: var(--spacing-small);
-    font-size: var(--nav-text-size);
+    padding: var(--spacing-16);
+    font-size: var(--text2);
     display: flex;
     align-items: center;
 }
 
 .side-nav li img{
-    margin-right: var(--spacing-small);
+    margin-right: var(--spacing-16);
 }
 
 
@@ -93,13 +89,13 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: var(--spacing-ample);
-    margin-left: var(--spacing-regular);
+    margin-top: var(--spacing-64);
+    margin-left: var(--spacing-32);
     margin-bottom: 160px;
 }
 
 main{
-    padding: var(--spacing-ample);
+    padding: var(--spacing-64);
     flex-grow: 1;
 }
 
@@ -112,30 +108,30 @@ main{
 }
 
 h1{
-    font-size: var(--main-heading-size);
-    font-weight: var(--main-heading-weight);
+    font-size: var(--display1);
+    font-weight: var(--display1-bold);
     margin: 0px;
 }
 
 .contact{
-    background-color: var(--grey-background);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--grey-border);
-    padding: var(--spacing-small);
-    box-shadow: var(--elevation);
+    background-color: var(--black-100);
+    border-radius: var(--border-default);
+    border: 1px solid var(--black-200);
+    padding: var(--spacing-16);
+    box-shadow: var(--elevation-default);
     display: inline-block;
     position: fixed;
-    top: var(--spacing-ample);
-    right: var(--spacing-ample);
+    top: var(--spacing-64);
+    right: var(--spacing-64);
 }
 
 .mobile{
-    color: var(--blue-highlight);
-    font-weight: var(--body-text-strong-weight);
+    color: var(--blue-500);
+    font-weight: var(--text1-bold);
 }
 
 section.intro{
-    font-size: var(--sub-heading-size);
+    font-size: var(--title1);
 }
 
 section.about{
@@ -147,16 +143,28 @@ section.about{
     "personality tools education"
 }
 
+
+section.other{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: auto 200px;
+    grid-template-areas: 
+    "title title title"
+    "languages freetime inspiration"
+}
+
 h2.subheading{
-    font-size: var(--sub-heading-size);
-    font-weight: var(--sub-heading-weight);
+    font-size: var(--title1);
+    font-weight: var(--title1-regular);
     font-style: italic;
     margin: 88px 0 32px;
     grid-area: title;
 }
 
+/* positioning creating issues when inside and when outside, too */
 .list-with-bullets li{
     list-style-type: disc;
+    list-style-position: inside;
 }
 
 .list-with-bullets ul{
@@ -175,12 +183,12 @@ h2.subheading{
 }
 
 .blue-subtitle{
-    font-weight: var(--body-text-strong-weight);
-    color: var(--blue-highlight);
+    font-weight: var(--text1-bold);
+    color: var(--blue-500);
 }
 
-.year{
-    font-weight: var(--body-text-strong-weight);
+.year, .level{
+    font-weight: var(--text1-bold);
     margin-left: 12px;
 }
 
@@ -189,11 +197,12 @@ h2.subheading{
 }
 
 .title{
-    font-weight: var(--body-subtitle-weight);
+    font-weight: var(--text2-bold);
 }
 
+
 .elevated-button{
-    box-shadow: var(--elevation);
+    box-shadow: var(--elevation-default);
     border-radius: 50%;
     flex-shrink: 0;
 }
@@ -202,11 +211,11 @@ h2.subheading{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-regular);
+    margin-bottom: var(--spacing-16);
 }
 
 .panel{
-    border-bottom: 1px solid var(--grey-border);
+    border-bottom: 1px solid var(--black-200);
 }
 
 .position-details, .position-info{
@@ -219,7 +228,7 @@ footer{
     display: flex;
     color: white;
     justify-content: space-between;
-    padding: var(--spacing-small);
+    padding: var(--spacing-16);
     align-items: center;
     flex-grow: 0;
 }
@@ -227,7 +236,7 @@ footer{
 
 .panel-content{
     display: flex;
-    margin-bottom: var(--spacing-regular);
+    margin-bottom: var(--spacing-32);
 }
 
 .panel.closed .panel-content{
@@ -239,5 +248,5 @@ footer li{
 }
 
 footer li:not(:last-child){
-    margin-right: var(--spacing-regular);
+    margin-right: var(--spacing-32);
 }
