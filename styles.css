@@ -11,10 +11,10 @@ html{
 
     --font-family: 'Poppins', sans-serif;
 
-    --display1: 56px;
+    --display1: 48px;
     --display1-bold: 600;
 
-    --title1: 28px;
+    --title1: 24px;
     --title1-regular: 400;
 
     --text1: 16px;
@@ -28,6 +28,7 @@ html{
 
     --spacing-64: 64px;
     --spacing-32: 32px;
+    --spacing-24: 24px;
     --spacing-16: 16px;
     --spacing-8: 8px;
 
@@ -96,6 +97,7 @@ nav{
 
 main{
     padding: var(--spacing-64);
+    padding-top: var(--spacing-32);
     flex-grow: 1;
 }
 
@@ -121,7 +123,7 @@ h1{
     box-shadow: var(--elevation-default);
     display: inline-block;
     position: fixed;
-    top: var(--spacing-64);
+    top: var(--spacing-32);
     right: var(--spacing-64);
 }
 
@@ -143,7 +145,6 @@ section.about{
     "personality tools education"
 }
 
-
 section.other{
     display: grid;
     grid-template-columns: 1fr 1fr 2fr;
@@ -152,12 +153,60 @@ section.other{
     "title title title"
     "languages freetime inspiration"
 }
+/* Case studies styles begin */
+
+section.projects{
+    margin-top: var(--spacing-64);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 240px;
+    grid-gap: var(--spacing-32);
+    grid-template-areas: 
+    "project project"
+    "project project"
+}
+
+.project-example{
+    background-color: white;
+    border-radius: var(--border-default);
+    border: 1px solid var(--blue-500);
+    box-shadow: var(--elevation-default);
+}
+
+.project-info{
+    padding: var(--spacing-16);
+}
+
+.project-info h3{
+    margin: 0;
+}
+
+.project-thumb{
+    height: 154px;
+    background-color: var(--blue-500);
+    border-top-left-radius: var(--border-default);
+    border-top-right-radius: var(--border-default);
+}
+
+/* Case studies styles end */
+
+/* Article styles start */
+
+.article-thumb{
+    height: 154px;
+    background-color: var(--black-200);
+    border-top-left-radius: var(--border-default);
+    border-top-right-radius: var(--border-default);
+    border-bottom: 1px solid var(--blue-500);
+}
+
+/* Article styles end */
 
 h2.subheading{
     font-size: var(--title1);
     font-weight: var(--title1-regular);
     font-style: italic;
-    margin: 88px 0 32px;
+    margin: var(--spacing-64) 0 var(--spacing-32);
     grid-area: title;
 }
 
