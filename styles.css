@@ -1,6 +1,7 @@
 /* colours */
+
 html{
-    --black-100: #F3F3F3;
+    --black-100: #f5f5f5;
     --black-200: #E9E9E9;
     --blue-500: #2F59F5;
     --black-900: rgba(0, 0, 0, 0.88);
@@ -8,14 +9,13 @@ html{
     --footer-color: #2F2F2F; 
 
 /* Fonts */
-/* Fonts */
 
     --font-family: 'Poppins', sans-serif;
 
-    --display1: 48px;
+    --display1: 42px;
     --display1-bold: 600;
 
-    --title1: 24px;
+    --title1: 22px;
     --title1-regular: 400;
 
     --text1: 16px;
@@ -28,25 +28,20 @@ html{
  /* Spacing */
 
     --spacing-64: 64px;
+    --spacing-40: 40px;
     --spacing-32: 32px;
     --spacing-24: 24px;
     --spacing-16: 16px;
+    --spacing-12: 12px;
     --spacing-8: 8px;
 
  /* Other */
+
     --border-default: 16px;
     --elevation-default: 0px 2px 20px rgba(0, 0, 0, 0.08);
 
 }
 
-body {
-    display: flex;
-    height: 100vh;
-    margin: 0;
-    font-family: var(--font-family);
-    font-size: var(--text1);
-    font-weight: var(--text1-regular);
-}
 
 /* resets */
 * {
@@ -64,6 +59,75 @@ p, ul,li{
 
 /* styles */
 
+/* Case studies styles begin */
+
+section.projects{
+    margin-top: var(--spacing-64);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 217px 217px;
+    grid-gap: var(--spacing-40);
+    grid-template-areas: 
+    "project project"
+    "project project"
+}
+
+.project-example{
+    background-color: white;
+    border-radius: var(--border-default);
+    border: 1px solid var(--blue-500);
+    box-shadow: var(--elevation-default);
+}
+
+.project-info{
+    padding: var(--spacing-16);
+}
+
+.project-info h3{
+    margin: 0;
+}
+
+.project-thumb{
+    height: 130px;
+    background-color: var(--blue-500);
+    border-top-left-radius: var(--border-default);
+    border-top-right-radius: var(--border-default);
+}
+
+.project-example:hover{
+    cursor: pointer;
+}
+
+.project-info:hover{
+    color: var(--blue-500);
+}
+
+/* Case studies styles end */
+
+/* Article styles start */
+
+.article-thumb{
+    height: 130px;
+    background-color: var(--black-200);
+    border-top-left-radius: var(--border-default);
+    border-top-right-radius: var(--border-default);
+    border-bottom: 1px solid var(--blue-500);
+}
+
+/* Article styles end */
+
+/* Index styles begin */
+
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: var(--text1);
+    font-weight: var(--text1-regular);
+}
+
+/* nav begin */
 nav{
     background-color: var(--black-100);
     flex: 220px 0 0;
@@ -72,7 +136,10 @@ nav{
 }
 
 .side-nav li{
-    padding: var(--spacing-16);
+    padding-left: var(--spacing-32);
+    padding-right: var(--spacing-12);
+    padding-top: var(--spacing-12);
+    padding-bottom: var(--spacing-12);
     font-size: var(--text2);
     display: flex;
     align-items: center;
@@ -82,19 +149,34 @@ nav{
     margin-right: var(--spacing-16);
 }
 
+.side-nav a{
+    text-decoration: none;
+    color: var(--black-900);
+}
+
+.side-nav a:hover{
+    color: var(--blue-500);
+}
+
+.nav-item-active a{
+    font-weight: var(--text2-bold);
+}
+
 
 .logo{
-    background-color: #C4C4C4;
-    height: 104px;
-    width: 104px;
-    border-radius: 50%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: var(--spacing-64);
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: var(--spacing-40);
     margin-left: var(--spacing-32);
-    margin-bottom: 160px;
+    margin-bottom: 420px;
 }
+
+.logo p{
+    font-size: var(--display1-bold);
+}
+
+/* nav end */
 
 main{
     padding: var(--spacing-64);
@@ -154,54 +236,8 @@ section.other{
     "title title title"
     "languages freetime inspiration"
 }
-/* Case studies styles begin */
 
-section.projects{
-    margin-top: var(--spacing-64);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 240px 240px;
-    grid-gap: var(--spacing-32);
-    grid-template-areas: 
-    "project project"
-    "project project"
-}
 
-.project-example{
-    background-color: white;
-    border-radius: var(--border-default);
-    border: 1px solid var(--blue-500);
-    box-shadow: var(--elevation-default);
-}
-
-.project-info{
-    padding: var(--spacing-16);
-}
-
-.project-info h3{
-    margin: 0;
-}
-
-.project-thumb{
-    height: 154px;
-    background-color: var(--blue-500);
-    border-top-left-radius: var(--border-default);
-    border-top-right-radius: var(--border-default);
-}
-
-/* Case studies styles end */
-
-/* Article styles start */
-
-.article-thumb{
-    height: 154px;
-    background-color: var(--black-200);
-    border-top-left-radius: var(--border-default);
-    border-top-right-radius: var(--border-default);
-    border-bottom: 1px solid var(--blue-500);
-}
-
-/* Article styles end */
 
 h2.subheading{
     font-size: var(--title1);
@@ -229,7 +265,6 @@ h2.subheading{
 
 .education li{
     flex-grow: 1;
-   
 }
 
 .blue-subtitle{
@@ -250,12 +285,12 @@ h2.subheading{
     font-weight: var(--text2-bold);
 }
 
-
 .elevated-button{
     box-shadow: var(--elevation-default);
     border-radius: 50%;
     flex-shrink: 0;
 }
+
 
 .panel-title{
     display: flex;
@@ -273,6 +308,17 @@ h2.subheading{
 }
 
 
+.panel-content{
+    display: flex;
+    margin-bottom: var(--spacing-32);
+}
+
+.panel.closed .panel-content{
+display: none;
+}
+
+/* footer begin */
+
 footer{
     background-color: var(--footer-color);
     display: flex;
@@ -283,16 +329,6 @@ footer{
     flex-grow: 0;
 }
 
-
-.panel-content{
-    display: flex;
-    margin-bottom: var(--spacing-32);
-}
-
-.panel.closed .panel-content{
-display: none;
-}
-
 footer li{
     display: inline-block;
 }
@@ -300,3 +336,5 @@ footer li{
 footer li:not(:last-child){
     margin-right: var(--spacing-32);
 }
+
+/* footer end */

@@ -1,3 +1,4 @@
+/* Toggling experience */
 document.getElementById('design-experience-toggle')
     .addEventListener('click', toggleDesignPanel);
 
@@ -47,3 +48,5 @@ function togglePersonalButton() {
         imageInput.src=imageInput.src.replace('minus.svg','plus.svg');
     }
 }
+
+/* Navigation selection */
