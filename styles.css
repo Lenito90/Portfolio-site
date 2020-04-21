@@ -163,18 +163,35 @@ nav{
 }
 
 
-.logo{
+/*.logo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    margin-top: var(--spacing-40);
+    margin-top: var(--spacing-32);
     margin-left: var(--spacing-32);
     margin-bottom: 420px;
+}*/
+
+.logo{
+    margin-top: var(--spacing-32);
+    margin-left: var(--spacing-32);
+    margin-bottom: 420px;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    grid-template-columns: 40px auto;
+    grid-gap: var(--spacing-16);
 }
 
-.logo p{
-    font-size: var(--display1-bold);
+.line1{
+    font-size: var(--display1);
+    align-self: center;
 }
+
+.line2{
+    font-size: var(--text2);
+    align-self: center;
+}
+
 
 /* nav end */
 
